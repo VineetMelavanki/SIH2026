@@ -1,0 +1,22 @@
+{
+  "dataMode": "demo",
+  "projectName": "Consilience",
+  "tagline": "We federate the model, not the data.",
+  "track": "Finance & AI",
+  "dataset": "CICIDS2017",
+  "dataModeLabel": "Demo data — six simulated banks; values illustrate the federated-learning workflow and are not live bank results.",
+  "version": "1.0.0",
+  "generated": "2026-08-19",
+  "scope": {
+    "users": "Six simulated banks across three regions",
+    "classes": ["BENIGN", "BRUTE_FORCE", "DOS", "WEB_ATTACK", "INFILTRATION", "BOTNET", "DDOS"],
+    "privacyBoundary": "Local data remains inside each bank. Only protected model updates leave.",
+    "aggregation": "Fixed regional-then-global aggregation via a trusted aggregator",
+    "futureWork": [
+      "Cryptographic secure aggregation",
+      "Poisoning robustness mechanisms",
+      "Differential privacy formal proofs",
+      "Live multi-party deployment"
+    ]
+  }
+}

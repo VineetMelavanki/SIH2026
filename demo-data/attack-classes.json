@@ -1,0 +1,88 @@
+{
+  "dataMode": "demo",
+  "dataset": "CICIDS2017",
+  "datasetDescription": "Canadian Institute for Cybersecurity Intrusion Detection System 2017 dataset. Simulates 5 days of realistic network traffic with seven labelled classes (Benign + six attack families).",
+  "totalSamples": 2472151,
+  "features": 78,
+  "featureCategories": [
+    "Flow duration",
+    "Packet count (forward, backward)",
+    "Inter-arrival times",
+    "Packet length statistics",
+    "Flag counts (SYN, ACK, FIN, RST, PSH, URG)",
+    "Subflow bytes",
+    "Window size",
+    "Active/idle times",
+    "Port-based features"
+  ],
+  "attackClasses": [
+    {
+      "id": "BENIGN",
+      "name": "Benign Traffic",
+      "description": "Normal, legitimate network activity including web browsing, DNS lookups, email, internal banking applications, and inter-branch VPN traffic.",
+      "severity": "Info",
+      "examples": ["HTTPS to banking portal", "Internal DNS resolution", "SMTP relay", "Branch-to-HQ VPN"],
+      "samples": 1982390,
+      "color": "#5B9B64"
+    },
+    {
+      "id": "BRUTE_FORCE",
+      "name": "Brute Force",
+      "description": "Credential-guessing attacks against SSH, FTP, or web login endpoints. Typically many failed authentication attempts from a single source IP range.",
+      "severity": "Medium",
+      "examples": ["SSH dictionary attack", "WordPress wp-login flood", "FTP password spraying"],
+      "samples": 138358,
+      "color": "#E3B23C"
+    },
+    {
+      "id": "DOS",
+      "name": "Denial of Service",
+      "description": "Single-source resource exhaustion designed to overwhelm a target service (CPU, memory, or connection table). Slowloris, SYN flood, and HTTP slow POST variants.",
+      "severity": "High",
+      "examples": ["SYN flood", "Slowloris", "HTTP POST slow-read"],
+      "samples": 172354,
+      "color": "#C26C2C"
+    },
+    {
+      "id": "WEB_ATTACK",
+      "name": "Web Attack",
+      "description": "Application-layer attacks: SQL injection, cross-site scripting, path traversal, and command injection delivered through HTTP parameters or headers.",
+      "severity": "High",
+      "examples": ["SQL injection via form field", "Reflected XSS", "Directory traversal /../../"],
+      "samples": 42194,
+      "color": "#B34A4A"
+    },
+    {
+      "id": "INFILTRATION",
+      "name": "Infiltration",
+      "description": "Low-and-slow lateral movement: an attacker already inside the perimeter enumerates internal hosts, escalates privileges, and exfiltrates data in small bursts.",
+      "severity": "Critical",
+      "examples": ["Port scan internal subnet", "Pass-the-Hash", "DNS tunneled exfiltration"],
+      "samples": 11826,
+      "color": "#8B2C6E"
+    },
+    {
+      "id": "BOTNET",
+      "name": "Botnet",
+      "description": "Hosts compromised and controlled by a C2 server. Behaviours include periodic beaconing, port scanning the internet, and spam or click-fraud payloads.",
+      "severity": "High",
+      "examples": ["C2 beacon every 60s", "IRC bot command channel", "SMTP spam drone"],
+      "samples": 74658,
+      "color": "#6B4A8B"
+    },
+    {
+      "id": "DDOS",
+      "name": "DDoS",
+      "description": "Multi-source amplification or reflection attack (DNS, NTP, LDAP) or a large coordinated botnet producing packets far exceeding any single uplink capacity.",
+      "severity": "Critical",
+      "examples": ["DNS amplification", "NTP monlist", "HTTPS botnet flood"],
+      "samples": 50371,
+      "color": "#4A3F8B"
+    }
+  ],
+  "scopeNotes": [
+    "This is a six-bank simulated environment on CICIDS2017 labels; values illustrate workflow, not production results.",
+    "We do not handle fraud, mule-account detection, transaction analytics, or blockchain use cases.",
+    "Only the network-intrusion detection task is in scope for this demonstration."
+  ]
+}

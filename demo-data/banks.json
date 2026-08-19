@@ -1,0 +1,100 @@
+{
+  "dataMode": "demo",
+  "banks": [
+    {
+      "id": "bank_01",
+      "name": "Northgate Capital",
+      "region": "north",
+      "regionName": "Northern Region",
+      "location": "Delhi",
+      "employees": 12400,
+      "customerCount": 3800000,
+      "dailyTrafficSamples": 125000,
+      "localEpochs": 5,
+      "batchSize": 256,
+      "hardware": "GPU cluster x4",
+      "latencyMs": 42,
+      "status": "online"
+    },
+    {
+      "id": "bank_02",
+      "name": "Meridian Trust Bank",
+      "region": "north",
+      "regionName": "Northern Region",
+      "location": "Chandigarh",
+      "employees": 8200,
+      "customerCount": 2100000,
+      "dailyTrafficSamples": 78000,
+      "localEpochs": 4,
+      "batchSize": 192,
+      "hardware": "GPU cluster x2",
+      "latencyMs": 55,
+      "status": "online"
+    },
+    {
+      "id": "bank_03",
+      "name": "Harborline Financial",
+      "region": "west",
+      "regionName": "Western Region",
+      "location": "Mumbai",
+      "employees": 15800,
+      "customerCount": 5200000,
+      "dailyTrafficSamples": 168000,
+      "localEpochs": 6,
+      "batchSize": 320,
+      "hardware": "GPU cluster x6",
+      "latencyMs": 38,
+      "status": "online"
+    },
+    {
+      "id": "bank_04",
+      "name": "Suncrest Savings",
+      "region": "west",
+      "regionName": "Western Region",
+      "location": "Ahmedabad",
+      "employees": 6100,
+      "customerCount": 1450000,
+      "dailyTrafficSamples": 52000,
+      "localEpochs": 4,
+      "batchSize": 160,
+      "hardware": "GPU cluster x2",
+      "latencyMs": 61,
+      "status": "online"
+    },
+    {
+      "id": "bank_05",
+      "name": "Eastwind Union Bank",
+      "region": "south",
+      "regionName": "Southern Region",
+      "location": "Bengaluru",
+      "employees": 11300,
+      "customerCount": 3200000,
+      "dailyTrafficSamples": 104000,
+      "localEpochs": 5,
+      "batchSize": 256,
+      "hardware": "GPU cluster x4",
+      "latencyMs": 48,
+      "status": "online"
+    },
+    {
+      "id": "bank_06",
+      "name": "Coralsec Commercial",
+      "region": "south",
+      "regionName": "Southern Region",
+      "location": "Chennai",
+      "employees": 7600,
+      "customerCount": 1900000,
+      "dailyTrafficSamples": 71000,
+      "localEpochs": 4,
+      "batchSize": 192,
+      "hardware": "GPU cluster x3",
+      "latencyMs": 52,
+      "status": "online"
+    }
+  ],
+  "regions": [
+    { "id": "north", "name": "Northern Region", "banks": ["bank_01", "bank_02"] },
+    { "id": "west", "name": "Western Region", "banks": ["bank_03", "bank_04"] },
+    { "id": "south", "name": "Southern Region", "banks": ["bank_05", "bank_06"] }
+  ]
+}

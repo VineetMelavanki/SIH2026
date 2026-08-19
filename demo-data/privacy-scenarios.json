@@ -1,0 +1,110 @@
+{
+  "dataMode": "demo",
+  "mechanisms": {
+    "clipping": {
+      "name": "Gradient Clipping",
+      "description": "Each bank's per-sample gradients are clipped to a maximum L2 norm, bounding the influence of any single traffic record on the update.",
+      "defaultClipNorm": 1.0
+    },
+    "noise": {
+      "name": "Gaussian Noise",
+      "description": "Zero-mean Gaussian noise is added to clipped updates to calibrate differential privacy. Larger noise = stronger privacy, lower utility.",
+      "noiseStdBase": 0.01
+    },
+    "aggregation": {
+      "name": "Trusted Aggregator",
+      "description": "A neutral trusted aggregator performs regional then global weighted averaging. Cryptographic secure aggregation is future work."
+    }
+  },
+  "scenarios": [
+    {
+      "id": "scenario_low",
+      "name": "Low Privacy",
+      "description": "Minimal noise to maximise detection quality. Suitable for internal pilot within a single trusted consortium.",
+      "clipNorm": 1.5,
+      "noiseMultiplier": 0.5,
+      "epsilonPerRound": 0.42,
+      "epsilonCumulative": 5.04,
+      "delta": 1e-5,
+      "globalMacroF1": 0.852,
+      "globalAccuracy": 0.941,
+      "perRoundEpsilon": [0.42, 0.84, 1.26, 1.68, 2.10, 2.52, 2.94, 3.36, 3.78, 4.20, 4.62, 5.04],
+      "classF1": {
+        "BENIGN": 0.968,
+        "BRUTE_FORCE": 0.831,
+        "DOS": 0.894,
+        "WEB_ATTACK": 0.782,
+        "INFILTRATION": 0.612,
+        "BOTNET": 0.846,
+        "DDOS": 0.891
+      }
+    },
+    {
+      "id": "scenario_balanced",
+      "name": "Balanced Privacy",
+      "description": "Default configuration. Moderate noise calibrated to keep cumulative epsilon under 8 across all twelve rounds.",
+      "clipNorm": 1.0,
+      "noiseMultiplier": 1.0,
+      "epsilonPerRound": 0.67,
+      "epsilonCumulative": 8.04,
+      "delta": 1e-5,
+      "globalMacroF1": 0.838,
+      "globalAccuracy": 0.933,
+      "perRoundEpsilon": [0.67, 1.34, 2.01, 2.68, 3.35, 4.02, 4.69, 5.36, 6.03, 6.70, 7.37, 8.04],
+      "classF1": {
+        "BENIGN": 0.964,
+        "BRUTE_FORCE": 0.818,
+        "DOS": 0.882,
+        "WEB_ATTACK": 0.765,
+        "INFILTRATION": 0.588,
+        "BOTNET": 0.832,
+        "DDOS": 0.880
+      }
+    },
+    {
+      "id": "scenario_high",
+      "name": "High Privacy",
+      "description": "Stronger DP guarantee with larger noise multiplier. Trade-off visible on rare classes (INFILTRATION, WEB_ATTACK).",
+      "clipNorm": 0.8,
+      "noiseMultiplier": 1.8,
+      "epsilonPerRound": 0.93,
+      "epsilonCumulative": 11.16,
+      "delta": 1e-5,
+      "globalMacroF1": 0.807,
+      "globalAccuracy": 0.919,
+      "perRoundEpsilon": [0.93, 1.86, 2.79, 3.72, 4.65, 5.58, 6.51, 7.44, 8.37, 9.30, 10.23, 11.16],
+      "classF1": {
+        "BENIGN": 0.955,
+        "BRUTE_FORCE": 0.786,
+        "DOS": 0.856,
+        "WEB_ATTACK": 0.721,
+        "INFILTRATION": 0.514,
+        "BOTNET": 0.803,
+        "DDOS": 0.853
+      }
+    },
+    {
+      "id": "scenario_strict",
+      "name": "Strict Privacy",
+      "description": "Very strong differential privacy bound. Demonstrates utility floor; not recommended for production deployment today.",
+      "clipNorm": 0.6,
+      "noiseMultiplier": 3.0,
+      "epsilonPerRound": 1.25,
+      "epsilonCumulative": 15.00,
+      "delta": 1e-5,
+      "globalMacroF1": 0.762,
+      "globalAccuracy": 0.898,
+      "perRoundEpsilon": [1.25, 2.50, 3.75, 5.00, 6.25, 7.50, 8.75, 10.00, 11.25, 12.50, 13.75, 15.00],
+      "classF1": {
+        "BENIGN": 0.941,
+        "BRUTE_FORCE": 0.741,
+        "DOS": 0.819,
+        "WEB_ATTACK": 0.662,
+        "INFILTRATION": 0.432,
+        "BOTNET": 0.765,
+        "DDOS": 0.814
+      }
+    }
+  ],
+  "defaultScenarioId": "scenario_balanced"
+}

@@ -1,0 +1,207 @@
+{
+  "dataMode": "demo",
+  "roundsTotal": 12,
+  "globalLearningRate": 0.015,
+  "rounds": [
+    {
+      "round": 0,
+      "phase": "init",
+      "phaseLabel": "Initialization",
+      "description": "Global seed model distributed to all six banks.",
+      "globalMacroF1": 0.582,
+      "globalAccuracy": 0.814,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 0, "localF1": 0.582 },
+        { "bankId": "bank_02", "participated": true, "samples": 0, "localF1": 0.582 },
+        { "bankId": "bank_03", "participated": true, "samples": 0, "localF1": 0.582 },
+        { "bankId": "bank_04", "participated": true, "samples": 0, "localF1": 0.582 },
+        { "bankId": "bank_05", "participated": true, "samples": 0, "localF1": 0.582 },
+        { "bankId": "bank_06", "participated": true, "samples": 0, "localF1": 0.582 }
+      ]
+    },
+    {
+      "round": 1,
+      "phase": "local",
+      "phaseLabel": "Local Training",
+      "description": "Each bank trains locally on private traffic; raw data never leaves premises.",
+      "globalMacroF1": 0.631,
+      "globalAccuracy": 0.847,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.618 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.604 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.637 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.595 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.622 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.611 }
+      ]
+    },
+    {
+      "round": 2,
+      "phase": "protected",
+      "phaseLabel": "Protected Update",
+      "description": "Model updates are clipped, noised, and encrypted before leaving each bank.",
+      "globalMacroF1": 0.674,
+      "globalAccuracy": 0.866,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.658 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.647 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.681 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.638 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.663 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.654 }
+      ]
+    },
+    {
+      "round": 3,
+      "phase": "regional",
+      "phaseLabel": "Regional Aggregation",
+      "description": "Updates aggregated per region (North, West, South) by trusted aggregator.",
+      "globalMacroF1": 0.708,
+      "globalAccuracy": 0.881,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.691 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.682 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.715 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.670 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.698 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.685 }
+      ]
+    },
+    {
+      "round": 4,
+      "phase": "global",
+      "phaseLabel": "Global Aggregation",
+      "description": "Regional models fused into a single global model; redistributed to all banks.",
+      "globalMacroF1": 0.736,
+      "globalAccuracy": 0.893,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.722 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.711 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.745 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.697 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.726 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.714 }
+      ]
+    },
+    {
+      "round": 5,
+      "phase": "local",
+      "phaseLabel": "Local Training Round 2",
+      "description": "Banks fine-tune updated global model on the latest local traffic windows.",
+      "globalMacroF1": 0.759,
+      "globalAccuracy": 0.902,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.748 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.732 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.767 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.718 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.751 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.737 }
+      ]
+    },
+    {
+      "round": 6,
+      "phase": "protected",
+      "phaseLabel": "Protected Update Round 2",
+      "description": "Second-wave updates clipped and noised; cumulative privacy budget tracked.",
+      "globalMacroF1": 0.778,
+      "globalAccuracy": 0.909,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.766 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.751 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.786 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.739 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.771 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.755 }
+      ]
+    },
+    {
+      "round": 7,
+      "phase": "regional",
+      "phaseLabel": "Regional Aggregation Round 2",
+      "description": "Regional fusion smooths out noise and reweights per-bank contributions.",
+      "globalMacroF1": 0.795,
+      "globalAccuracy": 0.916,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.783 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.769 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.803 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.757 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.787 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.772 }
+      ]
+    },
+    {
+      "round": 8,
+      "phase": "global",
+      "phaseLabel": "Global Aggregation Round 2",
+      "description": "Updated global model fuses region insights; returns to every bank for round 3.",
+      "globalMacroF1": 0.809,
+      "globalAccuracy": 0.921,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.797 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.782 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.816 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.770 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.801 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.786 }
+      ]
+    },
+    {
+      "round": 9,
+      "phase": "local",
+      "phaseLabel": "Local Training Round 3",
+      "description": "Banks refine on new local traffic seen since round 5 began.",
+      "globalMacroF1": 0.821,
+      "globalAccuracy": 0.926,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.808 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.794 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.828 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.781 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.813 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.797 }
+      ]
+    },
+    {
+      "round": 10,
+      "phase": "protected",
+      "phaseLabel": "Protected Update Round 3",
+      "description": "Final protected update before convergence; privacy budget nearly exhausted.",
+      "globalMacroF1": 0.831,
+      "globalAccuracy": 0.930,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.817 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.803 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.837 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.791 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.822 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.806 }
+      ]
+    },
+    {
+      "round": 11,
+      "phase": "global",
+      "phaseLabel": "Final Global Model",
+      "description": "Converged global model ready for deployment. Banks continue local evaluation.",
+      "globalMacroF1": 0.838,
+      "globalAccuracy": 0.933,
+      "bankUpdates": [
+        { "bankId": "bank_01", "participated": true, "samples": 125000, "localF1": 0.824 },
+        { "bankId": "bank_02", "participated": true, "samples": 78000, "localF1": 0.811 },
+        { "bankId": "bank_03", "participated": true, "samples": 168000, "localF1": 0.844 },
+        { "bankId": "bank_04", "participated": true, "samples": 52000, "localF1": 0.799 },
+        { "bankId": "bank_05", "participated": true, "samples": 104000, "localF1": 0.830 },
+        { "bankId": "bank_06", "participated": true, "samples": 71000, "localF1": 0.814 }
+      ]
+    }
+  ],
+  "phaseOrder": ["init", "local", "protected", "regional", "global"],
+  "phaseLabels": {
+    "init": "Initialization",
+    "local": "Local Training",
+    "protected": "Protected Update",
+    "regional": "Regional Aggregation",
+    "global": "Global Aggregation"
+  }
+}

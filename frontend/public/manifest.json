@@ -1,0 +1,16 @@
+{
+  "name": "Consilience",
+  "short_name": "Consilience",
+  "description": "Consilience — privacy-preserving federated intrusion detection for six simulated banks.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1220",
+  "theme_color": "#0EA5A0",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "dataMode": "demo",
+  "scenarioId": "scenario_balanced",
+  "banks": [
+    {
+      "bankId": "bank_01",
+      "name": "Northgate Capital",
+      "region": "north",
+      "localAccuracy": 0.942,
+      "localMacroF1": 0.824,
+      "attackF1": 0.768,
+      "benignF1": 0.971,
+      "contributionWeight": 0.21,
+      "epochsCompleted": 5,
+      "avgLatencyMs": 42,
+      "bandwidthMB": 18.4,
+      "perClassF1": {
+        "BENIGN": 0.971,
+        "BRUTE_FORCE": 0.812,
+        "DOS": 0.888,
+        "WEB_ATTACK": 0.751,
+        "INFILTRATION": 0.562,
+        "BOTNET": 0.824,
+        "DDOS": 0.878
+      }
+    },
+    {
+      "bankId": "bank_02",
+      "name": "Meridian Trust Bank",
+      "region": "north",
+      "localAccuracy": 0.928,
+      "localMacroF1": 0.811,
+      "attackF1": 0.748,
+      "benignF1": 0.958,
+      "contributionWeight": 0.13,
+      "epochsCompleted": 4,
+      "avgLatencyMs": 55,
+      "bandwidthMB": 11.7,
+      "perClassF1": {
+        "BENIGN": 0.958,
+        "BRUTE_FORCE": 0.801,
+        "DOS": 0.867,
+        "WEB_ATTACK": 0.724,
+        "INFILTRATION": 0.528,
+        "BOTNET": 0.810,
+        "DDOS": 0.862
+      }
+    },
+    {
+      "bankId": "bank_03",
+      "name": "Harborline Financial",
+      "region": "west",
+      "localAccuracy": 0.951,
+      "localMacroF1": 0.844,
+      "attackF1": 0.792,
+      "benignF1": 0.976,
+      "contributionWeight": 0.28,
+      "epochsCompleted": 6,
+      "avgLatencyMs": 38,
+      "bandwidthMB": 24.1,
+      "perClassF1": {
+        "BENIGN": 0.976,
+        "BRUTE_FORCE": 0.836,
+        "DOS": 0.896,
+        "WEB_ATTACK": 0.784,
+        "INFILTRATION": 0.604,
+        "BOTNET": 0.845,
+        "DDOS": 0.894
+      }
+    },
+    {
+      "bankId": "bank_04",
+      "name": "Suncrest Savings",
+      "region": "west",
+      "localAccuracy": 0.919,
+      "localMacroF1": 0.799,
+      "attackF1": 0.732,
+      "benignF1": 0.951,
+      "contributionWeight": 0.09,
+      "epochsCompleted": 4,
+      "avgLatencyMs": 61,
+      "bandwidthMB": 8.2,
+      "perClassF1": {
+        "BENIGN": 0.951,
+        "BRUTE_FORCE": 0.784,
+        "DOS": 0.854,
+        "WEB_ATTACK": 0.702,
+        "INFILTRATION": 0.498,
+        "BOTNET": 0.794,
+        "DDOS": 0.848
+      }
+    },
+    {
+      "bankId": "bank_05",
+      "name": "Eastwind Union Bank",
+      "region": "south",
+      "localAccuracy": 0.938,
+      "localMacroF1": 0.830,
+      "attackF1": 0.776,
+      "benignF1": 0.967,
+      "contributionWeight": 0.17,
+      "epochsCompleted": 5,
+      "avgLatencyMs": 48,
+      "bandwidthMB": 15.9,
+      "perClassF1": {
+        "BENIGN": 0.967,
+        "BRUTE_FORCE": 0.819,
+        "DOS": 0.881,
+        "WEB_ATTACK": 0.761,
+        "INFILTRATION": 0.580,
+        "BOTNET": 0.829,
+        "DDOS": 0.874
+      }
+    },
+    {
+      "bankId": "bank_06",
+      "name": "Coralsec Commercial",
+      "region": "south",
+      "localAccuracy": 0.926,
+      "localMacroF1": 0.814,
+      "attackF1": 0.752,
+      "benignF1": 0.956,
+      "contributionWeight": 0.12,
+      "epochsCompleted": 4,
+      "avgLatencyMs": 52,
+      "bandwidthMB": 10.8,
+      "perClassF1": {
+        "BENIGN": 0.956,
+        "BRUTE_FORCE": 0.804,
+        "DOS": 0.870,
+        "WEB_ATTACK": 0.732,
+        "INFILTRATION": 0.541,
+        "BOTNET": 0.811,
+        "DDOS": 0.866
+      }
+    }
+  ],
+  "privacyUtilityCurve": [
+    { "epsilon": 5.04, "scenario": "Low Privacy", "macroF1": 0.852, "accuracy": 0.941 },
+    { "epsilon": 8.04, "scenario": "Balanced Privacy", "macroF1": 0.838, "accuracy": 0.933 },
+    { "epsilon": 11.16, "scenario": "High Privacy", "macroF1": 0.807, "accuracy": 0.919 },
+    { "epsilon": 15.00, "scenario": "Strict Privacy", "macroF1": 0.762, "accuracy": 0.898 }
+  ]
+}
