@@ -8,7 +8,7 @@ export const DATA_MODE_LABEL =
 
 export const ROUTES = [
   {
-    path: '/',
+    path: '/dashboards',
     label: 'Home',
     icon: 'home',
     description: 'Value proposition, consortium overview, entry to federation flow.',

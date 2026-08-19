@@ -1,5 +1,6 @@
 import { Routes, Route, Navigate } from 'react-router-dom';
 import AppShell from './components/layout/AppShell.jsx';
+import LandingPage from './pages/LandingPage.jsx';
 import Home from './pages/Home.jsx';
 import FederationPage from './pages/FederationPage.jsx';
 import PrivacyPage from './pages/PrivacyPage.jsx';
@@ -10,8 +11,10 @@ import NotFound from './pages/NotFound.jsx';
 function App() {
   return (
     <Routes>
+      <Route path="/" element={<LandingPage />} />
+
       <Route element={<AppShell />}>
-        <Route path="/" element={<Home />} />
+        <Route path="/dashboards" element={<Home />} />
         <Route path="/federation" element={<FederationPage />} />
         <Route path="/privacy" element={<PrivacyPage />} />
         <Route path="/performance" element={<PerformancePage />} />
